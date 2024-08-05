@@ -1,0 +1,324 @@
+/* Importing the Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+
+:root {
+  --primary-color: #E6E6FA; /* Pale lavender */
+  --secondary-color: #fff;
+  --text-color: #333333; /* Dark charcoal */
+  --error-color: #e74c3c;
+  --border-radius: 10px;
+  --spacing-unit: 8px;
+  --font-size-xl: 3rem; /* Extra large */
+  --font-size-large: 2rem;
+  --font-size-medium: 1.5rem;
+  --font-size-small: 1rem;
+  --font-size-xs: 0.8rem; /* Extra small */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: var(--spacing-unit);
+}
+
+.scoreScreenContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--spacing-unit);
+}
+
+.topper {
+  font-size: var(--font-size-large);
+  font-weight: 900;
+  margin: 30px;
+}
+
+.plug {
+  position: relative;
+  bottom: 20;
+}
+
+.rulesBlock {
+  width: auto;
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-unit);
+  margin-top: 5vh; /* Adjusted to ensure visibility */
+}
+
+.rulesText {
+  font-size: var(--font-size-small);
+  margin-bottom: var(--spacing-unit);
+}
+
+.startButton {
+  width: auto;
+  height: 40px;
+  background-color: #D4D4FA;
+  color: var(--text-color);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  justify-self: center;
+  padding-left: var(--spacing-unit);
+  padding-right: var(--spacing-unit);
+  margin: var(--spacing-unit);
+
+}
+
+.startButton:hover {
+  background-color: #D4D4FA; /* Darken by 10% */
+}
+
+.gameBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featureBox {
+  width: 90vw;
+  height: 30vh;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.featureBoxPrompt {
+  width: 90vw;
+  height: 30vh;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.timeScoreText {
+  font-size: var(--font-size-medium);
+  margin-bottom: 5%;
+}
+
+.timeText {
+  font-size: var(--font-size-small);
+}
+
+.timeTextItalic {
+  font-size: var(--font-size-small);
+  font-style: italic;
+}
+
+.attributesContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.promptText {
+  font-size: var(--font-size-medium);
+  text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-unit);
+}
+
+.inputInnerContainer {
+  display: flex;
+}
+
+.answerInput {
+  text-align: center;
+  font-size: var(--font-size-small);
+  outline: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  padding: var(--spacing-unit);
+}
+
+.nameInput {
+  width: 90%;
+  height: 50px;
+  text-align: center;
+  font-size: var(--font-size-small);
+  outline: none;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--text-color);
+  padding: var(--spacing-unit);
+}
+
+.inputError {
+  color: var(--error-color);
+  position: absolute;
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+}
+
+.saveInputError {
+  color: var(--error-color);
+  position: absolute;
+  margin-top: 130px;
+  display: flex;
+  justify-content: center;
+}
+
+.inputErrorSuccess {
+  color: green;
+  position: absolute;
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.playOrSave {
+  color: var(--text-color);
+  margin-top: 30px;
+}
+
+.couldHave {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  padding: var(--spacing-unit);
+  margin: var(--spacing-unit);
+  height: 50;
+}
+
+.enterScoreModal {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  height: 60%;
+  width: 80%;
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--spacing-unit);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+  .featureBox,
+  .featureBoxPrompt {
+    width: 60vw;
+  }
+
+  .answerInput,
+  .nameInput {
+    width: 90%;
+    height: 50%;
+    text-align: center;
+    font-size: var(--font-size-small);
+    outline: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    padding: var(--spacing-unit);
+  }
+
+  .topper {
+    font-size: var(--font-size-large);
+    margin: 30px;
+  }
+
+  .rulesText {
+    font-size: var(--font-size-xs);
+  }
+
+  .timeScoreText {
+    font-size: var(--font-size-large);
+  }
+
+  .timeText, .timeTextItalic, .inputErrorText {
+    font-size: var(--font-size-medium);
+  }
+
+  .promptText {
+    font-size: var(--font-size-large);
+  }
+}
+
+@media (min-width: 1024px) {
+  .featureBox,
+  .featureBoxPrompt {
+    width: 40vw;
+  }
+
+  .answerInput,
+  .nameInput {
+    width: 90%;
+    height: 50%;
+    text-align: center;
+    font-size: var(--font-size-small);
+    outline: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    padding: var(--spacing-unit);
+  }
+
+  .topper {
+    font-size: var(--font-size-xl);
+    margin: 30px;
+  }
+
+  .rulesText {
+    font-size: var(--font-size-small);
+  }
+
+  .timeScoreText {
+    font-size: var(--font-size-xl);
+  }
+
+  .promptText {
+    font-size: var(--font-size-xl);
+  }
+}
+
